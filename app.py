@@ -53,7 +53,7 @@ def receive_message(data):
 
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('0.0.0.0', int(os.environ.get('PORTA', 5000))))
+    server_socket.bind(('0.0.0.0', int(os.environ.get('port', 443))))
     server_socket.listen()
     print('Servidor iniciado')
     while True:
