@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Conectar ao servidor SocketIO
-  const socket = io.connect('https://barbosahoff.herokuapp.com');
+  const socket = io();
+        socket.on('connect', function () {
+            // socket.emit('teste', {data: 'I\'m connected!'});
+        });
 
   // Enviar mensagem ao servidor ao enviar o formulário
   document.querySelector('#message-form').onsubmit = (e) => {
