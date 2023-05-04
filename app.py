@@ -50,17 +50,17 @@ def receive_message(data):
     print('Mensagem recebida:', data)
     messages.append(data)
     emit('message', data, broadcast=True)
-
+    
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('0.0.0.0', int(os.environ.get('PORTA', 5000))))
+    server_socket.bind(('localhost', 5000))
     server_socket.listen()
     print('Servidor iniciado')
     while True:
         client_socket, client_address = server_socket.accept()
         print(f'Cliente conectado: {client_address}')
         threading.Thread(target=handle_client, args=(client_socket,)).start()
-
+        
 def handle_client(client_socket):
     while True:
         data = client_socket.recv(1024)
