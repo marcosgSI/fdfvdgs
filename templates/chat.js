@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Conectar ao servidor SocketIO
   // const socket = io.connect('http://localhost:8000');
 // Conectar ao servidor SocketIO
-  const socket = io.connect('http://0.0.0.0:8000');
+  const socket = io.connect('http://0.0.0.0:5000');
   // Enviar mensagem ao servidor ao enviar o formulário
   document.querySelector('#message-form').onsubmit = (e) => {
     e.preventDefault();
