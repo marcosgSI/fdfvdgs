@@ -73,7 +73,7 @@ def handle_client(client_socket):
 
 def run_socketio_in_thread():
     print('Iniciando servidor Flask')
-    socketio.run(app, port=8000)
+    socketio.run(app, port=443)
 
 if __name__ == '__main__':
     threading.Thread(target=start_server, daemon=True).start()
