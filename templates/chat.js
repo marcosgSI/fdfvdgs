@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Conectar ao servidor SocketIO
-  const socket = io();
-        socket.on('connect', function () {
-            // socket.emit('teste', {data: 'I\'m connected!'});
+const socket = io.connect('http://localhost:8000');
         });
 
   // Enviar mensagem ao servidor ao enviar o formulário
